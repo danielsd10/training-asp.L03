@@ -31,8 +31,7 @@ namespace Northwind
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome/css/font-awesome.css",
                       "~/Content/metisMenu/metisMenu.css",
-                      "~/Content/sb-admin-2.css",
-                      "~/Content/site.css"));
+                      "~/Content/sb-admin-2.css"));
         }
     }
 }

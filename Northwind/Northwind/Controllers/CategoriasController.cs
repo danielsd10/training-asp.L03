@@ -13,5 +13,11 @@ namespace Northwind.Controllers
         {
             return View();
         }
+
+        // GET: Categorias/Nuevo
+        public ActionResult Nuevo()
+        {
+            return View();
+        }
     }
 }
