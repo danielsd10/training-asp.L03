@@ -8,10 +8,12 @@ namespace Northwind.Controllers
 {
     public class CategoriasController : Controller
     {
+        NorthwndDB DB = new NorthwndDB();
+
         // GET: Categorias
         public ActionResult Index()
         {
-            return View();
+            return View(DB.Categories);
         }
 
         // GET: Categorias/Nuevo

@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -167,6 +169,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Category.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CategoriasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -177,6 +182,24 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="NorthwindModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>NorthwindModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -193,6 +216,16 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="NorthwindModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthwindModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NorthwindModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+      <LastGenOutput>NorthwindModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\font-awesome\css\font-awesome.css.map" />
@@ -201,6 +234,13 @@
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
+    <EntityDeploy Include="NorthwindModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthwindModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="NorthwindModel.edmx.diagram">
+      <DependentUpon>NorthwindModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -266,6 +306,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
