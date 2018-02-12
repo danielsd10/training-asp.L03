@@ -1,21 +1,27 @@
 ﻿<div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Nueva Categoría</h1>
+        <h1 class="page-header">Nuevo Producto</h1>
     </div>
     <!-- /.col-lg-12 -->
 </div>
 
 <div class="row">
     <div class="col-lg-12">
-        <form role="form">
+        <form role="form" method="post">
             <div class="form-group">
                 <label>Nombre</label>
-                <input class="form-control">
+                <input name="Nombre" class="form-control">
             </div>
             <div class="form-group">
-                <label>Descripción</label>
-                <input class="form-control">
-                <p class="help-block">Descripción de categoría.</p>
+                <label>Categoría</label>
+                <select name="IdCategoria" class="form-control">
+                    @{ 
+                        foreach (Northwind.Models.Categoria item in ViewBag.Categorias)
+                        {
+                    <option value="@item.Id">@item.Nombre</option>
+                        }
+                    }
+                </select>
             </div>
             <button type="submit" class="btn btn-default">Guardar</button>
             <button type="reset" class="btn btn-default">Borrar</button>

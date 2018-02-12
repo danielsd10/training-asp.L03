@@ -37,5 +37,13 @@ namespace Northwind.Models
                    orderby p.Nombre ascending
                    select p;
         }
+
+        public bool GuardarProducto(Producto objProducto)
+        {
+            int items;
+            Productos.Add(objProducto);
+            items = this.SaveChanges();
+            return items > 0;
+        }
     }
 }

@@ -19,10 +19,22 @@ namespace Northwind.Controllers
             return View(Productos);
         }
 
-        // GET: Categorias/Nuevo
+        // GET: Productos/Nuevo
+        [HttpGet]
         public ActionResult Nuevo()
         {
+            ViewBag.Categorias = BD.CargarCategorias();
             return View();
+        }
+
+        // POST: Productos/Nuevo
+        [HttpPost]
+        public ActionResult Nuevo(Producto data)
+        {
+            if (BD.GuardarProducto(data))
+            {
+            }
+            return RedirectToAction("Index");
         }
     }
 }
