@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Northwind.Models;
 
 namespace Northwind.Controllers
 {
     public class ProductosController : Controller
     {
-        NorthwndDB DB = new NorthwndDB();
+        NorthwndDbContext DB = new NorthwndDbContext();
 
         // GET: Categorias
         public ActionResult Index()
         {
-            return View(DB.Products);
+            var Productos = DB.CargarProductos();
+            ViewBag.Titulo = "Productos";
+            return View(Productos);
         }
 
         // GET: Categorias/Nuevo
