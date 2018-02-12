@@ -9,12 +9,12 @@ namespace Northwind.Controllers
 {
     public class ProductosController : Controller
     {
-        NorthwndDbContext DB = new NorthwndDbContext();
+        NorthwndDbContext BD = new NorthwndDbContext();
 
         // GET: Categorias
         public ActionResult Index()
         {
-            var Productos = DB.CargarProductos();
+            var Productos = BD.CargarProductos();
             ViewBag.Titulo = "Productos";
             return View(Productos);
         }

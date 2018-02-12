@@ -23,6 +23,14 @@ namespace Northwind.Models
             select c;
         }
 
+        public bool GuardarCategoria(Categoria objCategoria)
+        {
+            int items;
+            Categorias.Add(objCategoria);
+            items = this.SaveChanges();
+            return items > 0;
+        }
+
         public IQueryable<Producto> CargarProductos()
         {
             return from p in this.Productos
